@@ -34,6 +34,7 @@ Note, there will be more to come in this section, but for the time being, I want
 2. The attributes I am currently interested in are as follows: Total Cloud Cover (% of the sky dome), Relative Humidity, Temperature and Extra Terrestrial Irradiance (ETR).  I am attempting to predict the Direct Normal Irradiance and the Diffuse Horizontal Irradiance.  I will break each of these down below:
 
 TMY3 User's Manual: https://www.nrel.gov/docs/fy08osti/43156.pdf
+
 NDFD REST Web Service Info: https://graphical.weather.gov/xml/rest.php
 ### Total Cloud Cover
 As was stated above, this is the percentage of the sky-dome that is covered in clouds.  Note that TMY3 data gives this value in "tenths" of the sky dome (0 being 0% and 10 being 100%, 5 would be 50%, etc.).  NDFD gives the value in a percentage, which I have divided by 10 in order to bring it to the same scale when making predictions.  However, I feel as though I need to remove the extra significant figure from the prediction data since it does not exist in the training data.  Cloud Cover (outside of ETR) seems to be the strongest indicator of solar irradiance at a given time, as they are strongly negatively correlated (r is about -.7 or -.8).
@@ -75,12 +76,16 @@ Any thoughts, concerns, questions or suggestions are 100% welcome.  I'm aware th
 
 ## Acknowledgments 
 
-Machine Learning Mastery (MLM) has been a great intro into that world for myself.  I'm planning on buying a few of their books as well, but there is plenty of free content if you're looking to dip your toes in: https://machinelearningmastery.com/
+Machine Learning Mastery (MLM) has been a great intro into that world for myself.  I'm planning on buying a few of their books as well, but there is plenty of free content if you're looking to dip your toes in: 
+https://machinelearningmastery.com/
 
 I've also been using plenty of code from MLM directly in this project.
 
 Within the python scripts, I'm using a variety of functionality from NumPy, Pandas, SciKitLearn, and others.  
+
 http://www.numpy.org/
+
 https://pandas.pydata.org/
+
 http://scikit-learn.org/stable/index.html
 
