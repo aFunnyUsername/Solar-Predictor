@@ -42,6 +42,8 @@ There are a variety of modules used that need to at the very least be installed 
   
   -sklearn
   
+  -Please note as well that I used Python 2.7
+  
 
 The general structure of the program is this.  The runner.py script sets up an hourly schedule to:
 
