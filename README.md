@@ -15,6 +15,22 @@ I wanted to see what could be done to assist in this area using free or inexpens
 
 ## Getting Started
 
+PLEASE NOTE:
+There are a variety of modules used that need to at the very least be installed in your python environment, and most likely need to be the same version.  Here is a list of the modules I'm using, I will have steps to help install them at a later time:
+  -os
+  -apscheduler
+  -time
+  -datetime
+  -sys
+  -requests
+  -xml.etree
+  -numpy
+  -pandas
+  -scipy
+  -matplotlib
+  -sklearn
+  
+
 The general structure of the program is this.  The runner.py script sets up an hourly schedule to:
 
 1. Pull an xml file from the National Digital Forecast Database (NDFD) (ndfdAPI.py)
