@@ -16,18 +16,30 @@ I wanted to see what could be done to assist in this area using free or inexpens
 ## Getting Started
 
 PLEASE NOTE:
-There are a variety of modules used that need to at the very least be installed in your python environment, and most likely need to be the same version.  Here is a list of the modules I'm using, I will have steps to help install them at a later time:
+There are a variety of modules used that need to at the very least be installed in your python environment, and most likely need to be the same version.  Here is a list of the modules I'm using, I will have steps to help install them at a later time, hopefully this week (6/26/2018):
+
   -os
+  
   -apscheduler
+  
   -time
+  
   -datetime
+  
   -sys
+  
   -requests
+  
   -xml.etree
+  
   -numpy
+  
   -pandas
+  
   -scipy
+  
   -matplotlib
+  
   -sklearn
   
 
