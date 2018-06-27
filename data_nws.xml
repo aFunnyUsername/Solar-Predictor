@@ -5,7 +5,7 @@
       <title>NOAA's National Weather Service Real Time Mesoscale Analysis And Forecast Data</title>
       <field>meteorological</field>
       <category>analysis and forecast</category>
-      <creation-date refresh-frequency="PT1H">2018-06-26T11:58:55Z</creation-date>
+      <creation-date refresh-frequency="PT1H">2018-06-27T12:58:56Z</creation-date>
     </product>
     <source>
       <more-information>http://products.weather.gov/search.php</more-information>
@@ -23,182 +23,194 @@
     </location>
     <moreWeatherInformation applicable-location="point1">https://forecast-v3.weather.gov/point/44.88,-93.23</moreWeatherInformation>
     <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p24h-n1-1</layout-key>
-      <start-valid-time>2018-06-26T08:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T20:00:00-05:00</end-valid-time>
-    </time-layout>
-    <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p24h-n2-2</layout-key>
-      <start-valid-time>2018-06-25T20:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T09:00:00-05:00</end-valid-time>
-      <start-valid-time>2018-06-26T20:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-27T09:00:00-05:00</end-valid-time>
-    </time-layout>
-    <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p12h-n3-3</layout-key>
-      <start-valid-time>2018-06-25T19:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T07:00:00-05:00</end-valid-time>
-      <start-valid-time>2018-06-26T07:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T19:00:00-05:00</end-valid-time>
-      <start-valid-time>2018-06-26T19:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-27T07:00:00-05:00</end-valid-time>
-    </time-layout>
-    <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p3h-n9-4</layout-key>
-      <start-valid-time>2018-06-26T07:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T10:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T13:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T16:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T19:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T22:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T01:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T04:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T07:00:00-05:00</start-valid-time>
-    </time-layout>
-    <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p6h-n5-5</layout-key>
-      <start-valid-time>2018-06-26T01:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T07:00:00-05:00</end-valid-time>
-      <start-valid-time>2018-06-26T07:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T13:00:00-05:00</end-valid-time>
-      <start-valid-time>2018-06-26T13:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T19:00:00-05:00</end-valid-time>
-      <start-valid-time>2018-06-26T19:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-27T01:00:00-05:00</end-valid-time>
-      <start-valid-time>2018-06-27T01:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-27T07:00:00-05:00</end-valid-time>
-    </time-layout>
-    <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p1h-n25-6</layout-key>
-      <start-valid-time>2018-06-26T07:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T08:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T09:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T10:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T11:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T12:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T13:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T14:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T15:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T16:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T17:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T18:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T19:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T20:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T21:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T22:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-26T23:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T00:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T01:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T02:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T03:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T04:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T05:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T06:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-27T07:00:00-05:00</start-valid-time>
-    </time-layout>
-    <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p24h-n2-7</layout-key>
-      <start-valid-time>2018-06-26T08:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-26T20:00:00-05:00</end-valid-time>
+      <layout-key>k-p24h-n2-1</layout-key>
       <start-valid-time>2018-06-27T08:00:00-05:00</start-valid-time>
       <end-valid-time>2018-06-27T20:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-28T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T20:00:00-05:00</end-valid-time>
     </time-layout>
     <time-layout time-coordinate="local" summarization="none">
-      <layout-key>k-p24h-n2-8</layout-key>
-      <start-valid-time>2018-06-26T20:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-27T09:00:00-05:00</end-valid-time>
+      <layout-key>k-p24h-n1-2</layout-key>
       <start-valid-time>2018-06-27T20:00:00-05:00</start-valid-time>
       <end-valid-time>2018-06-28T09:00:00-05:00</end-valid-time>
     </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p12h-n3-3</layout-key>
+      <start-valid-time>2018-06-27T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-27T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-27T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-28T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T19:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p3h-n9-4</layout-key>
+      <start-valid-time>2018-06-27T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T22:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T04:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T10:00:00-05:00</start-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p6h-n5-5</layout-key>
+      <start-valid-time>2018-06-27T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-27T13:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-27T13:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-27T19:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-27T19:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T01:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-28T01:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-28T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T13:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p1h-n25-6</layout-key>
+      <start-valid-time>2018-06-27T08:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T09:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T11:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T12:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T14:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T15:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T16:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T17:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T18:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T19:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T20:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T21:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T22:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-27T23:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T00:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T01:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T02:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T03:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T04:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T05:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T06:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T07:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-28T08:00:00-05:00</start-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n2-7</layout-key>
+      <start-valid-time>2018-06-27T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T07:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-28T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-29T07:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n1-8</layout-key>
+      <start-valid-time>2018-06-28T07:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-29T07:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n2-9</layout-key>
+      <start-valid-time>2018-06-27T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-27T20:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-28T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T20:00:00-05:00</end-valid-time>
+    </time-layout>
+    <time-layout time-coordinate="local" summarization="none">
+      <layout-key>k-p24h-n2-10</layout-key>
+      <start-valid-time>2018-06-27T20:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-28T09:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-28T20:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-29T09:00:00-05:00</end-valid-time>
+    </time-layout>
     <parameters applicable-location="point1">
-      <temperature type="maximum" units="Fahrenheit" time-layout="k-p24h-n1-1">
+      <temperature type="maximum" units="Fahrenheit" time-layout="k-p24h-n2-1">
         <name>Daily Maximum Temperature</name>
-        <value>74</value>
+        <value>81</value>
+        <value>87</value>
       </temperature>
-      <temperature type="minimum" units="Fahrenheit" time-layout="k-p24h-n2-2">
+      <temperature type="minimum" units="Fahrenheit" time-layout="k-p24h-n1-2">
         <name>Daily Minimum Temperature</name>
-        <value>64</value>
-        <value>65</value>
+        <value>68</value>
       </temperature>
       <temperature type="hourly" units="Fahrenheit" time-layout="k-p3h-n9-4">
         <name>Temperature</name>
-        <value>64</value>
-        <value>66</value>
         <value>70</value>
-        <value>74</value>
-        <value>74</value>
+        <value>75</value>
+        <value>80</value>
+        <value>80</value>
+        <value>75</value>
         <value>70</value>
-        <value>67</value>
-        <value>65</value>
-        <value>65</value>
+        <value>68</value>
+        <value>69</value>
+        <value>78</value>
       </temperature>
       <temperature type="dew point" units="Fahrenheit" time-layout="k-p3h-n9-4">
         <name>Dew Point Temperature</name>
-        <value>62</value>
-        <value>63</value>
+        <value>65</value>
         <value>65</value>
         <value>66</value>
+        <value>67</value>
+        <value>67</value>
+        <value>67</value>
         <value>66</value>
         <value>65</value>
-        <value>65</value>
-        <value>64</value>
-        <value>64</value>
+        <value>66</value>
       </temperature>
       <precipitation type="liquid" units="inches" time-layout="k-p6h-n5-5">
         <name>Liquid Precipitation Amount</name>
-        <value>0.24</value>
-        <value>0.04</value>
-        <value>0.01</value>
+        <value>0.00</value>
+        <value>0.00</value>
+        <value>0.00</value>
         <value>0.00</value>
         <value>0.00</value>
       </precipitation>
       <wind-speed type="sustained" units="knots" time-layout="k-p3h-n9-4">
         <name>Wind Speed</name>
-        <value>9</value>
-        <value>6</value>
-        <value>5</value>
-        <value>5</value>
-        <value>5</value>
+        <value>3</value>
         <value>4</value>
-        <value>2</value>
+        <value>6</value>
+        <value>7</value>
+        <value>4</value>
+        <value>3</value>
         <value>2</value>
         <value>3</value>
+        <value>4</value>
       </wind-speed>
       <direction type="wind" units="degrees true" time-layout="k-p3h-n9-4">
         <name>Wind Direction</name>
-        <value>90</value>
-        <value>90</value>
-        <value>80</value>
-        <value>60</value>
-        <value>50</value>
-        <value>50</value>
-        <value>60</value>
-        <value>30</value>
-        <value>340</value>
+        <value>300</value>
+        <value>290</value>
+        <value>260</value>
+        <value>260</value>
+        <value>230</value>
+        <value>230</value>
+        <value>230</value>
+        <value>150</value>
+        <value>160</value>
       </direction>
       <cloud-amount type="total" units="percent" time-layout="k-p3h-n9-4">
         <name>Cloud Cover Amount</name>
-        <value>95</value>
-        <value>97</value>
-        <value>97</value>
-        <value>90</value>
-        <value>87</value>
-        <value>87</value>
-        <value>74</value>
-        <value>71</value>
-        <value>70</value>
+        <value>86</value>
+        <value>75</value>
+        <value>49</value>
+        <value>38</value>
+        <value>18</value>
+        <value>14</value>
+        <value>26</value>
+        <value>39</value>
+        <value>28</value>
       </cloud-amount>
       <temperature type="apparent" units="Fahrenheit" time-layout="k-p3h-n9-4">
         <name>Apparent Temperature</name>
-        <value>64</value>
-        <value>66</value>
         <value>70</value>
-        <value>74</value>
-        <value>74</value>
+        <value>75</value>
+        <value>82</value>
+        <value>82</value>
+        <value>75</value>
         <value>70</value>
-        <value>67</value>
-        <value>65</value>
-        <value>65</value>
+        <value>68</value>
+        <value>69</value>
+        <value>78</value>
       </temperature>
       <precipitation type="ice" units="inches" time-layout="k-p6h-n5-5">
         <name>Ice Accumulation</name>
@@ -218,80 +230,86 @@
       </precipitation>
       <probability-of-precipitation type="12 hour" units="percent" time-layout="k-p12h-n3-3">
         <name>12 Hourly Probability of Precipitation</name>
-        <value>75</value>
-        <value>50</value>
-        <value>13</value>
+        <value>4</value>
+        <value>3</value>
+        <value>6</value>
       </probability-of-precipitation>
-      <fire-weather type="risk from wind and relative humidity" time-layout="k-p24h-n2-2">
+      <fire-weather type="risk from wind and relative humidity" time-layout="k-p24h-n2-7">
         <name>Fire Weather Outlook from Wind and Relative Humidity</name>
         <value>No Areas</value>
         <value>No Areas</value>
       </fire-weather>
-      <fire-weather type="risk from dry thunderstorms" time-layout="k-p24h-n2-2">
+      <fire-weather type="risk from dry thunderstorms" time-layout="k-p24h-n2-7">
         <name>Fire Weather Outlook from Dry Thunderstorms</name>
         <value>No Areas</value>
         <value>No Areas</value>
       </fire-weather>
       <convective-hazard>
-        <outlook time-layout="k-p24h-n2-2">
+        <outlook time-layout="k-p24h-n2-7">
           <name>Convective Hazard Outlook</name>
           <value>General Thunderstorms</value>
           <value>General Thunderstorms</value>
         </outlook>
       </convective-hazard>
       <convective-hazard>
-        <severe-component type="tornadoes" units="percent" time-layout="k-p24h-n2-2">
+        <severe-component type="tornadoes" units="percent" time-layout="k-p24h-n1-2">
           <name>Probability of Tornadoes</name>
           <value>0</value>
-          <value>0</value>
         </severe-component>
       </convective-hazard>
       <convective-hazard>
-        <severe-component type="hail" units="percent" time-layout="k-p24h-n2-2">
+        <severe-component type="hail" units="percent" time-layout="k-p24h-n1-2">
           <name>Probability of Hail</name>
           <value>0</value>
-          <value>0</value>
         </severe-component>
       </convective-hazard>
       <convective-hazard>
-        <severe-component type="damaging thunderstorm winds" units="percent" time-layout="k-p24h-n2-2">
+        <severe-component type="damaging thunderstorm winds" units="percent" time-layout="k-p24h-n1-2">
           <name>Probability of Damaging Thunderstorm Winds</name>
           <value>0</value>
-          <value>0</value>
         </severe-component>
       </convective-hazard>
       <convective-hazard>
-        <severe-component type="extreme tornadoes" units="percent" time-layout="k-p24h-n2-2">
+        <severe-component type="extreme tornadoes" units="percent" time-layout="k-p24h-n1-2">
           <name>Probability of Extreme Tornadoes</name>
           <value>0</value>
-          <value>0</value>
         </severe-component>
       </convective-hazard>
       <convective-hazard>
-        <severe-component type="extreme hail" units="percent" time-layout="k-p24h-n2-2">
+        <severe-component type="extreme hail" units="percent" time-layout="k-p24h-n1-2">
           <name>Probability of Extreme Hail</name>
           <value>0</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="extreme thunderstorm winds" units="percent" time-layout="k-p24h-n1-2">
+          <name>Probability of Extreme Thunderstorm Winds</name>
           <value>0</value>
         </severe-component>
       </convective-hazard>
       <convective-hazard>
-        <severe-component type="extreme thunderstorm winds" units="percent" time-layout="k-p24h-n2-2">
-          <name>Probability of Extreme Thunderstorm Winds</name>
+        <severe-component type="severe thunderstorms" units="percent" time-layout="k-p24h-n1-8">
+          <name>Total Probability of Severe Thunderstorms</name>
           <value>0</value>
+        </severe-component>
+      </convective-hazard>
+      <convective-hazard>
+        <severe-component type="extreme severe thunderstorms" units="percent" time-layout="k-p24h-n1-8">
+          <name>Total Probability of Extreme Severe Thunderstorms</name>
           <value>0</value>
         </severe-component>
       </convective-hazard>
       <wind-speed type="gust" units="knots" time-layout="k-p3h-n9-4">
         <name>Wind Speed Gust</name>
-        <value>10</value>
-        <value>6</value>
-        <value>5</value>
-        <value>5</value>
-        <value>5</value>
+        <value>3</value>
         <value>4</value>
-        <value>2</value>
+        <value>6</value>
+        <value>7</value>
+        <value>4</value>
+        <value>3</value>
         <value>2</value>
         <value>3</value>
+        <value>4</value>
       </wind-speed>
       <wind-speed type="incremental34" units="percent" time-layout="k-p6h-n5-5">
         <name>Probability of a Tropical Cyclone Wind Speed above 34 Knots (Incremental)</name>
@@ -343,82 +361,49 @@
       </wind-speed>
       <humidity type="relative" units="percent" time-layout="k-p3h-n9-4">
         <name>Relative Humidity</name>
-        <value>93</value>
+        <value>84</value>
+        <value>71</value>
+        <value>62</value>
+        <value>65</value>
+        <value>76</value>
         <value>90</value>
-        <value>84</value>
-        <value>76</value>
-        <value>76</value>
-        <value>84</value>
         <value>93</value>
-        <value>97</value>
-        <value>97</value>
+        <value>87</value>
+        <value>67</value>
       </humidity>
-      <humidity type="maximum relative" units="percent" time-layout="k-p24h-n2-7">
+      <humidity type="maximum relative" units="percent" time-layout="k-p24h-n2-9">
         <name>Daily Maximum Relative Humidity</name>
         <value>97</value>
-        <value>96</value>
+        <value>93</value>
       </humidity>
-      <humidity type="minimum relative" units="percent" time-layout="k-p24h-n2-8">
+      <humidity type="minimum relative" units="percent" time-layout="k-p24h-n2-10">
         <name>Daily Minimum Relative Humidity</name>
-        <value>76</value>
-        <value>59</value>
+        <value>63</value>
+        <value>47</value>
       </humidity>
       <weather time-layout="k-p3h-n9-4">
         <name>Weather Type, Coverage, and Intensity</name>
-        <weather-conditions>
-          <value coverage="chance" intensity="light" weather-type="rain showers" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-          <value coverage="slight chance" intensity="none" additive="and" weather-type="thunderstorms" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-        </weather-conditions>
-        <weather-conditions>
-          <value coverage="chance" intensity="light" weather-type="rain showers" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-        </weather-conditions>
-        <weather-conditions>
-          <value coverage="chance" intensity="light" weather-type="rain showers" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-          <value coverage="slight chance" intensity="none" additive="and" weather-type="thunderstorms" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-        </weather-conditions>
-        <weather-conditions>
-          <value coverage="chance" intensity="light" weather-type="rain showers" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-          <value coverage="slight chance" intensity="none" additive="and" weather-type="thunderstorms" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-        </weather-conditions>
-        <weather-conditions>
-          <value coverage="chance" intensity="very light" weather-type="rain showers" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-        </weather-conditions>
         <weather-conditions/>
         <weather-conditions/>
-        <weather-conditions>
-          <value coverage="patchy" intensity="none" weather-type="fog" qualifier="none">
-            <visibility xsi:nil="true"/>
-          </value>
-        </weather-conditions>
+        <weather-conditions/>
+        <weather-conditions/>
+        <weather-conditions/>
+        <weather-conditions/>
+        <weather-conditions/>
+        <weather-conditions/>
         <weather-conditions/>
       </weather>
       <conditions-icon type="forecast-NWS" time-layout="k-p3h-n9-4">
         <name>Conditions Icons</name>
-        <icon-link>http://forecast.weather.gov/images/wtf/tsra80.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/shra50.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/tsra50.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/tsra50.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/shra50.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/nbkn.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/nbkn.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/nfg.jpg</icon-link>
         <icon-link>http://forecast.weather.gov/images/wtf/bkn.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/bkn.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/nfew.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/nfew.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/nsct.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
       </conditions-icon>
       <hazards time-layout="k-p1h-n25-6">
         <name>Watches, Warnings, and Advisories</name>
