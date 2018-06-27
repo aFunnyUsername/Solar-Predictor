@@ -54,7 +54,7 @@ The general structure of the program is this.  The runner.py script sets up an h
 A couple of notes on the general layout:
 
 1. The NDFD, according to their website, is updated every hour.  Note however, that the data is stored every three hours: 0100, 0400, 0700, 1000, 1300, 1600, 1900, 2200, repeated.  The reader pulls every hour in case a change has been made however,
-2. In order for a user to use the program, the runner.py script will need to be updated: the filepaths on lines 22-29 and 56 will all need to be updated for the user's system.  In addition, you can update your Other than that, I think all other scripts should work properly - please let me know if this is not the case and I will work to resolve it.
+2. In order for a user to use the program, the runner.py script will need to be updated: the filepaths on lines 22-29 and 56 will all need to be updated for the user's system.  In addition, line 21 of predictor.py contains a filepath that needs to be updated similarly.  Other than that, I think all other scripts should work properly - please let me know if this is not the case and I will work to resolve it.
 
 ## Data Analysis
 
