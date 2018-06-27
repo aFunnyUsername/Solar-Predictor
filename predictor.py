@@ -5,8 +5,6 @@ import scipy
 #---------------
 import numpy as np
 #---------------
-import matplotlib.pyplot as plt
-#---------------
 import pandas as pd
 from pandas.tools.plotting import scatter_matrix
 #---------------
@@ -123,6 +121,7 @@ def predictor(csv_fp, DNI_model_fp, DHI_model_fp):
 	#also read in the model's serial
 	DNI_model = joblib.load(DNI_model_fp)
 	DHI_model = joblib.load(DHI_model_fp)
+
 	#the following steps are required in order to match up the ETR data for the TMY with
 	#the NWS data that we've been collecting
 	new_date_time_list = []
@@ -166,22 +165,19 @@ def predictor(csv_fp, DNI_model_fp, DHI_model_fp):
 		k += 1
 	#we will add these values to the csv data frame (and eventually a new csv)	
 	new_df['ETR'] = future_ETR 
+	new_X_df = new_df[['ETR', 'Cloud Coverage', 'Temperature', 'Relative Humidity']]	
 	#now for the real predictions
-	new_df_a = new_df.values
 	#NOTE, same x values, but they're in a different order in the csv
-	new_X = new_df_a[:, [6, 1, 4, 3]]	
-
-	new_X_scaled = X_normalizer.fit_transform(new_X)
+	new_X = new_X_df.values	
+	new_X_scaled = X_normalizer.fit_transform(new_X)	
 	#now make predictions using the model and then return the still scaled Y to be re-scaled in the global frame 
 	future_DNI_Y = DNI_model.predict(new_X_scaled)
-	future_DHI_Y = DHI_model.predict(new_X_scaled)
-
+	future_DHI_Y = DHI_model.predict(new_X_scaled)	
 	future_DNI_Y = np.array(future_DNI_Y).reshape((len(future_DNI_Y), 1))
 	future_DHI_Y = np.array(future_DHI_Y).reshape((len(future_DHI_Y), 1))
 
 	future_DNI_Y_inverted = DNI_Y_normalizer.inverse_transform(future_DNI_Y)
 	future_DHI_Y_inverted = DHI_Y_normalizer.inverse_transform(future_DHI_Y)
-
 	return (new_df, future_DNI_Y_inverted, future_DHI_Y_inverted)
 
 def update_df(predictions_list, new_df, column_names):

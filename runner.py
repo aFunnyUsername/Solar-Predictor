@@ -24,8 +24,8 @@ file_path_old = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\dat
 tmy_file_path = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\tmy3MSPairport.csv" 
 csv_file_path_new = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\data_csv_nws.csv"
 csv_file_path_old = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\data_csv_nws_old.csv"
-DNI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\SVR_DNI_final_06252018.sav"
-DHI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\SVR_DHI_final_06252018.sav"
+DNI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\SVR_DNI_final_06272018.sav"
+DHI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\SVR_DHI_final_06272018.sav"
 write_df_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\prediction_csvs\\pred_" + get_now()[1] + "_.csv"
 
 
@@ -39,7 +39,7 @@ def main():
 			print('Great!  CSV updated at: ' + str(now))
 			
 			future_data = pred.predictor(csv_file_path_new, DNI_model_fp, DHI_model_fp)
-			print(future_data)
+			#print(future_data)
 			predictions_list = []
 
 			i = 0

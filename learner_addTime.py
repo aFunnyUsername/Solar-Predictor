@@ -8,8 +8,6 @@ import scipy
 #---------------
 import numpy as np
 #---------------
-import matplotlib.pyplot as plt
-#---------------
 import pandas as pd
 from pandas.tools.plotting import scatter_matrix
 #---------------
@@ -59,7 +57,7 @@ def inverse(array):
 	normalizer = pp.MinMaxScaler()
 	return normalizer.inverse_transform(array)
 
-X = tmy_weather_a[:, [0, 4, 5, 6]]
+X = tmy_weather_a[:, [5, 6, 0, 4]]
 Y = tmy_weather_a[:, [2, 3]]
 DNI_Y = Y[:, 0]
 DHI_Y = Y[:, 1]
@@ -220,8 +218,8 @@ SVM_DHI = SVR()
 SVM_DNI.fit(X_validation_scaled, DNI_Y_validation_scaled.ravel())
 SVM_DHI.fit(X_validation_scaled, DHI_Y_validation_scaled.ravel())
 
-SVM_DNI_filename = 'SVR_DNI_final_06252018.sav'
-SVM_DHI_filename = 'SVR_DHI_final_06252018.sav'
+SVM_DNI_filename = 'SVR_DNI_final_06272018.sav'
+SVM_DHI_filename = 'SVR_DHI_final_06272018.sav'
 joblib.dump(SVM_DNI, SVM_DNI_filename)
 joblib.dump(SVM_DHI, SVM_DHI_filename)
 
@@ -304,7 +302,7 @@ for index in tmy_date_time_df['DateTime'].isin(new_date_time_df['DateTime']):
 new_df['ETR'] = future_ETR
 
 new_df_a = new_df.values
-new_X = new_df_a[:, [6, 1, 4, 3]]
+new_X = new_df_a[:, [4, 5, 6, 3]]
 
 
 new_X_scaled = X_normalizer.fit_transform(new_X)
@@ -323,7 +321,6 @@ new_df['DNI'] = future_DNI_inverted
 new_df['DHI'] = future_DHI_inverted
 
 print(new_df)
-
 
 
 
