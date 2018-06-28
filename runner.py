@@ -47,7 +47,7 @@ def main():
 
 main()
 scheduler = BlockingScheduler(standalone=True)
-scheduler.add_job(main, 'interval', hours=1, misfire_grace_time = 3600)
+scheduler.add_job(main, 'interval', hours=1, misfire_grace_time = 60)
 try:
 	scheduler.start()
 except (KeyboardInterrupt, SystemExit):
