@@ -22,11 +22,10 @@ to_predict = ['DNI', 'DHI']
 file_path_new = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\data_nws.xml"
 file_path_old = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\data_nws_old.xml"
 tmy_file_path = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\tmy3MSPairport.csv" 
-csv_file_path_new = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\data_csv_nws.csv"
-csv_file_path_old = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\data_csv_nws_old.csv"
-DNI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\SVR_DNI_final_06272018.sav"
-DHI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\SVR_DHI_final_06272018.sav"
-write_df_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\prediction_csvs\\pred_" + get_now()[1] + "_.csv"
+DNI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\models\\SVR_DNI_final_06272018.sav"
+DHI_model_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\models\\SVR_DHI_final_06272018.sav"
+write_df_fp = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\prediction_csvs\\SVR_predictions.csv"
+#NOTE, for now, just make sure than write_df_fp matches the model that we're using but we'll do it smarter some other time
 
 
 def main():
@@ -34,35 +33,21 @@ def main():
 	if ret.retrieve_data(lat, lon, unit, points, file_path_new, file_path_old):
 		print('GREAT! XML READER EXECUTING...')
 
-		read_output = read.read_xml(file_path_new)
-		if read.write_to_csv(read_output):
-			print('Great!  CSV updated at: ' + str(now))
-			
-			future_data = pred.predictor(csv_file_path_new, DNI_model_fp, DHI_model_fp)
-			#print(future_data)
-			predictions_list = []
+		read_output_df = read.read_xml(file_path_new)			
+		future_df = pred.predictor(read_output_df, DNI_model_fp, DHI_model_fp)
+	
+		print(future_df)
 
-			i = 0
-			for thing in future_data:
-				if i == 0:
-					i += 1
-					continue
-				predictions_list.append(thing)
-				i += 1
-
-			future_df = pred.update_df(predictions_list, future_data[0], to_predict) 			
-			print(future_df)
-
-			pred.write_df("C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\prediction_csvs\\pred_" + get_now()[1] + "_.csv", future_df)
-		else:
-			print('fuck')
-
+		print(pred.write_df(write_df_fp, future_df))	
+		print('csv updated at: ' + str(now))	
 	else:
-		print('fuck')
+		#NOTE, later I will have the ndfd reader actually return a false in the correct place
+		print('error in reading from ndfd')
+
 
 main()
 scheduler = BlockingScheduler(standalone=True)
-scheduler.add_job(main, 'interval', hours=1)
+scheduler.add_job(main, 'interval', hours=1, misfire_grace_time = 3600)
 try:
 	scheduler.start()
 except (KeyboardInterrupt, SystemExit):
