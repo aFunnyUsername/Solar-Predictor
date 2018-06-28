@@ -32,7 +32,7 @@ def read_xml(file_path):
 		if weather.tag == 'humidity':
 			#print(weather.attrib)
 			if weather.attrib['type'] == 'relative':	
-				print(weather.attrib['type'])
+				#print(weather.attrib['type'])
 				humid = weather
  
 	cloud_list = []
@@ -102,10 +102,10 @@ def read_xml(file_path):
 	#print(time_list)
 
 	future_weather_df = pandas.DataFrame({'Date': date_list, 'Time' : time_list, 'Cloud Coverage' : cloud_list, 'Temperature' : temp_list, 'Relative Humidity' : humid_list})
-	print(future_weather_df)
 	return future_weather_df
 
-def write_to_csv(new_df):
+#keep just in case this doesn't work
+"""def write_to_csv(new_df):
 	filename_new = 'data_csv_nws.csv'
 	filename_old = 'data_csv_nws_old.csv'
 	old_df = pandas.read_csv(filename_old)
@@ -152,7 +152,7 @@ def write_to_csv(new_df):
 		return True
 	else:
 		return False
-
+"""
 
 
 

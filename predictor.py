@@ -115,9 +115,7 @@ def trainer(X_data, Y_data, seed, kfolds):
 	return results_df
 #---------------------------------------------------------------------------------------------
 		
-def predictor(csv_fp, DNI_model_fp, DHI_model_fp):
-	#read in the data from the csv, which is our predicted values
-	new_df = pd.read_csv(csv_fp, low_memory=False)
+def predictor(new_df, DNI_model_fp, DHI_model_fp):
 	#also read in the model's serial
 	DNI_model = joblib.load(DNI_model_fp)
 	DHI_model = joblib.load(DHI_model_fp)
@@ -138,6 +136,15 @@ def predictor(csv_fp, DNI_model_fp, DHI_model_fp):
 			new_date = date[:-5]
 		return new_date
 
+	def remove_date_zeros(date):
+		if date[0] is '0':
+			new_date = date[1:]
+			if new_date[-7] is '0':
+				new_date = new_date[:-7] + new_date[-6:]
+		elif date[-7] is '0':
+			new_date = date[:-7] + date[-6:]
+		return new_date
+
 	def remove_zero_time(time):
 		if time[0] is '0':
 			new_time = time[1:]
@@ -148,12 +155,14 @@ def predictor(csv_fp, DNI_model_fp, DHI_model_fp):
 	for time in new_df['Date']:
 		combined_dt = remove_year(new_df.loc[i, 'Date']) + ' ' + remove_zero_time(new_df.loc[i, 'Time'])
 		new_date_time_list.append(combined_dt)
+		new_df.loc[i, 'Date'] = remove_date_zeros(new_df.loc[i, 'Date'])
+		new_df.loc[i, 'Time'] = remove_zero_time(new_df.loc[i, 'Time'])
 		i += 1
 	for date in tmy['Date (MM/DD/YYYY)']:
 		combined_dt = remove_year(tmy.loc[j, 'Date (MM/DD/YYYY)']) + ' ' + remove_zero_time(tmy.loc[j, 'Time (HH:MM)'])
 		tmy_date_time_list.append(combined_dt)
 		j += 1
-
+	
 	new_date_time_df = pd.DataFrame({'DateTime': new_date_time_list})
 	tmy_date_time_df = pd.DataFrame({'DateTime': tmy_date_time_list, 'ETR': ETR_a})
 	#the .isin() function returns True if the value of the data frame passed as a parameter exists in
@@ -178,19 +187,65 @@ def predictor(csv_fp, DNI_model_fp, DHI_model_fp):
 
 	future_DNI_Y_inverted = DNI_Y_normalizer.inverse_transform(future_DNI_Y)
 	future_DHI_Y_inverted = DHI_Y_normalizer.inverse_transform(future_DHI_Y)
-	return (new_df, future_DNI_Y_inverted, future_DHI_Y_inverted)
 
-def update_df(predictions_list, new_df, column_names):
-	n = 0
-	for prediction in predictions_list:
-		new_df[column_names[n]] = prediction
-		n += 1
-	
+	new_df['DNI'] = future_DNI_Y_inverted
+	new_df['DHI'] = future_DHI_Y_inverted
+	#new_df.to_csv('prediction_csvs\\test.csv')
+
 	return new_df
 
-def write_df(new_fp, write_df):
-	write_df.to_csv(new_fp)
+def write_df(fp, new_df):
+	old_df = pd.read_csv(fp)
+	merged_df = pd.merge(old_df, new_df, on = ['Date', 'Time'], how='outer')
+	index_frame_merged_df = pd.notnull(merged_df)	
+	#here, we make an index frame to see which values are present in the new dataframe that were not
+	#present in the old.  The dataframes are merged so that all values are kept, nans deleted, and 
+	#column names preserved
+	clouds_x = merged_df['Cloud Coverage_x'].values	
+	clouds_y = merged_df['Cloud Coverage_y'].values
+	humid_x = merged_df['Relative Humidity_x'].values	
+	humid_y = merged_df['Relative Humidity_y'].values
+	temp_x = merged_df['Temperature_x'].values	
+	temp_y = merged_df['Temperature_y'].values
+	etr_x = merged_df['ETR_x'].values
+	etr_y = merged_df['ETR_y'].values
+	dni_x = merged_df['DNI_x'].values	
+	dni_y = merged_df['DNI_y'].values
+	dhi_x = merged_df['DHI_x'].values	
+	dhi_y = merged_df['DHI_y'].values	
+	#replace old values with new, unless new is NaN and old exists
+	for i, value in enumerate(index_frame_merged_df['Cloud Coverage_y']):
+		if value:
+			clouds_x[i] = clouds_y[i]
+	for i, value in enumerate(index_frame_merged_df['Relative Humidity_y']):
+		if value:
+			humid_x[i] = humid_y[i]
+	for i, value in enumerate(index_frame_merged_df['Temperature_y']):
+		if value:
+			temp_x[i] = temp_y[i]
+	for i, value in enumerate(index_frame_merged_df['ETR_y']):
+		if value:
+			etr_x[i] = etr_y[i]
+	for i, value in enumerate(index_frame_merged_df['DNI_y']):
+		if value:
+			dni_x[i] = dni_y[i]
+	for i, value in enumerate(index_frame_merged_df['DHI_y']):
+		if value:
+			dhi_x[i] = dhi_y[i]
 
+	new_times = merged_df['Time'].values
+	new_dates = merged_df['Date'].values
+	
+	write_df = pd.DataFrame({'Date': new_dates, 
+													 'Time': new_times,
+													 'Cloud Coverage': clouds_x, 
+													 'Temperature': temp_x, 
+													 'Relative Humidity': humid_x,
+													 'ETR': etr_x,
+													 'DNI': dni_x,
+													 'DHI': dhi_x})
+	write_df.to_csv(fp)
+	return write_df
 
 
 
