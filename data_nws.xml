@@ -5,7 +5,7 @@
       <title>NOAA's National Weather Service Real Time Mesoscale Analysis And Forecast Data</title>
       <field>meteorological</field>
       <category>analysis and forecast</category>
-      <creation-date refresh-frequency="PT1H">2018-06-28T12:17:22Z</creation-date>
+      <creation-date refresh-frequency="PT1H">2018-06-28T18:08:11Z</creation-date>
     </product>
     <source>
       <more-information>http://products.weather.gov/search.php</more-information>
@@ -45,8 +45,6 @@
     </time-layout>
     <time-layout time-coordinate="local" summarization="none">
       <layout-key>k-p3h-n9-4</layout-key>
-      <start-valid-time>2018-06-28T10:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-28T13:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-28T16:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-28T19:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-28T22:00:00-05:00</start-valid-time>
@@ -54,11 +52,11 @@
       <start-valid-time>2018-06-29T04:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-29T07:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-29T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T16:00:00-05:00</start-valid-time>
     </time-layout>
     <time-layout time-coordinate="local" summarization="none">
       <layout-key>k-p6h-n5-5</layout-key>
-      <start-valid-time>2018-06-28T07:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-28T13:00:00-05:00</end-valid-time>
       <start-valid-time>2018-06-28T13:00:00-05:00</start-valid-time>
       <end-valid-time>2018-06-28T19:00:00-05:00</end-valid-time>
       <start-valid-time>2018-06-28T19:00:00-05:00</start-valid-time>
@@ -67,15 +65,11 @@
       <end-valid-time>2018-06-29T07:00:00-05:00</end-valid-time>
       <start-valid-time>2018-06-29T07:00:00-05:00</start-valid-time>
       <end-valid-time>2018-06-29T13:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-29T13:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-29T19:00:00-05:00</end-valid-time>
     </time-layout>
     <time-layout time-coordinate="local" summarization="none">
       <layout-key>k-p1h-n25-6</layout-key>
-      <start-valid-time>2018-06-28T08:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-28T09:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-28T10:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-28T11:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-28T12:00:00-05:00</start-valid-time>
-      <start-valid-time>2018-06-28T13:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-28T14:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-28T15:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-28T16:00:00-05:00</start-valid-time>
@@ -95,6 +89,12 @@
       <start-valid-time>2018-06-29T06:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-29T07:00:00-05:00</start-valid-time>
       <start-valid-time>2018-06-29T08:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T09:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T10:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T11:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T12:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T13:00:00-05:00</start-valid-time>
+      <start-valid-time>2018-06-29T14:00:00-05:00</start-valid-time>
     </time-layout>
     <time-layout time-coordinate="local" summarization="none">
       <layout-key>k-p24h-n2-7</layout-key>
@@ -110,10 +110,10 @@
     </time-layout>
     <time-layout time-coordinate="local" summarization="none">
       <layout-key>k-p24h-n2-9</layout-key>
-      <start-valid-time>2018-06-28T08:00:00-05:00</start-valid-time>
-      <end-valid-time>2018-06-28T20:00:00-05:00</end-valid-time>
       <start-valid-time>2018-06-29T08:00:00-05:00</start-valid-time>
       <end-valid-time>2018-06-29T20:00:00-05:00</end-valid-time>
+      <start-valid-time>2018-06-30T08:00:00-05:00</start-valid-time>
+      <end-valid-time>2018-06-30T20:00:00-05:00</end-valid-time>
     </time-layout>
     <time-layout time-coordinate="local" summarization="none">
       <layout-key>k-p24h-n2-10</layout-key>
@@ -134,8 +134,6 @@
       </temperature>
       <temperature type="hourly" units="Fahrenheit" time-layout="k-p3h-n9-4">
         <name>Temperature</name>
-        <value>80</value>
-        <value>88</value>
         <value>89</value>
         <value>85</value>
         <value>80</value>
@@ -143,11 +141,11 @@
         <value>75</value>
         <value>75</value>
         <value>85</value>
+        <value>96</value>
+        <value>99</value>
       </temperature>
       <temperature type="dew point" units="Fahrenheit" time-layout="k-p3h-n9-4">
         <name>Dew Point Temperature</name>
-        <value>68</value>
-        <value>68</value>
         <value>69</value>
         <value>71</value>
         <value>71</value>
@@ -155,31 +153,31 @@
         <value>70</value>
         <value>70</value>
         <value>72</value>
+        <value>72</value>
+        <value>73</value>
       </temperature>
       <precipitation type="liquid" units="inches" time-layout="k-p6h-n5-5">
         <name>Liquid Precipitation Amount</name>
         <value>0.00</value>
-        <value>0.01</value>
+        <value>0.00</value>
         <value>0.00</value>
         <value>0.00</value>
         <value>0.00</value>
       </precipitation>
       <wind-speed type="sustained" units="knots" time-layout="k-p3h-n9-4">
         <name>Wind Speed</name>
-        <value>3</value>
-        <value>5</value>
-        <value>6</value>
-        <value>6</value>
+        <value>7</value>
+        <value>7</value>
         <value>6</value>
         <value>7</value>
         <value>9</value>
         <value>10</value>
         <value>11</value>
+        <value>13</value>
+        <value>14</value>
       </wind-speed>
       <direction type="wind" units="degrees true" time-layout="k-p3h-n9-4">
         <name>Wind Direction</name>
-        <value>180</value>
-        <value>180</value>
         <value>160</value>
         <value>140</value>
         <value>130</value>
@@ -187,23 +185,23 @@
         <value>130</value>
         <value>150</value>
         <value>180</value>
+        <value>190</value>
+        <value>200</value>
       </direction>
       <cloud-amount type="total" units="percent" time-layout="k-p3h-n9-4">
         <name>Cloud Cover Amount</name>
-        <value>28</value>
-        <value>45</value>
-        <value>49</value>
-        <value>44</value>
-        <value>54</value>
-        <value>55</value>
-        <value>59</value>
+        <value>57</value>
         <value>48</value>
-        <value>23</value>
+        <value>53</value>
+        <value>68</value>
+        <value>67</value>
+        <value>49</value>
+        <value>24</value>
+        <value>9</value>
+        <value>11</value>
       </cloud-amount>
       <temperature type="apparent" units="Fahrenheit" time-layout="k-p3h-n9-4">
         <name>Apparent Temperature</name>
-        <value>83</value>
-        <value>92</value>
         <value>94</value>
         <value>90</value>
         <value>83</value>
@@ -211,6 +209,8 @@
         <value>75</value>
         <value>75</value>
         <value>91</value>
+        <value>105</value>
+        <value>110</value>
       </temperature>
       <precipitation type="ice" units="inches" time-layout="k-p6h-n5-5">
         <name>Ice Accumulation</name>
@@ -230,7 +230,7 @@
       </precipitation>
       <probability-of-precipitation type="12 hour" units="percent" time-layout="k-p12h-n3-3">
         <name>12 Hourly Probability of Precipitation</name>
-        <value>24</value>
+        <value>22</value>
         <value>11</value>
         <value>4</value>
       </probability-of-precipitation>
@@ -247,7 +247,7 @@
       <convective-hazard>
         <outlook time-layout="k-p24h-n2-7">
           <name>Convective Hazard Outlook</name>
-          <value>General Thunderstorms</value>
+          <value>Marginal Risk of Severe Thunderstorms</value>
           <value>Marginal Risk of Severe Thunderstorms</value>
         </outlook>
       </convective-hazard>
@@ -266,7 +266,7 @@
       <convective-hazard>
         <severe-component type="damaging thunderstorm winds" units="percent" time-layout="k-p24h-n1-2">
           <name>Probability of Damaging Thunderstorm Winds</name>
-          <value>0</value>
+          <value>5</value>
         </severe-component>
       </convective-hazard>
       <convective-hazard>
@@ -301,15 +301,15 @@
       </convective-hazard>
       <wind-speed type="gust" units="knots" time-layout="k-p3h-n9-4">
         <name>Wind Speed Gust</name>
-        <value>3</value>
-        <value>5</value>
-        <value>6</value>
-        <value>6</value>
+        <value>11</value>
+        <value>11</value>
         <value>6</value>
         <value>7</value>
         <value>10</value>
         <value>13</value>
         <value>20</value>
+        <value>23</value>
+        <value>27</value>
       </wind-speed>
       <wind-speed type="incremental34" units="percent" time-layout="k-p6h-n5-5">
         <name>Probability of a Tropical Cyclone Wind Speed above 34 Knots (Incremental)</name>
@@ -361,20 +361,20 @@
       </wind-speed>
       <humidity type="relative" units="percent" time-layout="k-p3h-n9-4">
         <name>Relative Humidity</name>
-        <value>67</value>
-        <value>52</value>
         <value>52</value>
         <value>63</value>
         <value>74</value>
         <value>82</value>
+        <value>85</value>
         <value>84</value>
-        <value>84</value>
-        <value>66</value>
+        <value>65</value>
+        <value>46</value>
+        <value>44</value>
       </humidity>
       <humidity type="maximum relative" units="percent" time-layout="k-p24h-n2-9">
         <name>Daily Maximum Relative Humidity</name>
-        <value>97</value>
-        <value>84</value>
+        <value>85</value>
+        <value>85</value>
       </humidity>
       <humidity type="minimum relative" units="percent" time-layout="k-p24h-n2-10">
         <name>Daily Minimum Relative Humidity</name>
@@ -384,9 +384,30 @@
       <weather time-layout="k-p3h-n9-4">
         <name>Weather Type, Coverage, and Intensity</name>
         <weather-conditions/>
-        <weather-conditions/>
-        <weather-conditions/>
-        <weather-conditions/>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="slight chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="slight chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
+        <weather-conditions>
+          <value coverage="chance" intensity="none" weather-type="thunderstorms" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+          <value coverage="chance" intensity="light" additive="and" weather-type="rain showers" qualifier="none">
+            <visibility xsi:nil="true"/>
+          </value>
+        </weather-conditions>
         <weather-conditions/>
         <weather-conditions/>
         <weather-conditions/>
@@ -395,14 +416,14 @@
       </weather>
       <conditions-icon type="forecast-NWS" time-layout="k-p3h-n9-4">
         <name>Conditions Icons</name>
-        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/nbkn.jpg</icon-link>
-        <icon-link>http://forecast.weather.gov/images/wtf/nbkn.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/bkn.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/scttsra20.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra10.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/ntsra10.jpg</icon-link>
         <icon-link>http://forecast.weather.gov/images/wtf/nbkn.jpg</icon-link>
         <icon-link>http://forecast.weather.gov/images/wtf/sct.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/few.jpg</icon-link>
+        <icon-link>http://forecast.weather.gov/images/wtf/few.jpg</icon-link>
         <icon-link>http://forecast.weather.gov/images/wtf/few.jpg</icon-link>
       </conditions-icon>
       <hazards time-layout="k-p1h-n25-6">
@@ -428,10 +449,26 @@
         <hazard-conditions/>
         <hazard-conditions/>
         <hazard-conditions/>
-        <hazard-conditions/>
-        <hazard-conditions/>
-        <hazard-conditions/>
-        <hazard-conditions/>
+        <hazard-conditions>
+          <hazard hazardCode="EH.A" phenomena="Excessive Heat" significance="Watch" hazardType="long duration">
+            <hazardTextURL>https://forecast.weather.gov/wwamap/wwatxtget.php?cwa=usa&amp;wwa=Excessive%20Heat%20Watch</hazardTextURL>
+          </hazard>
+        </hazard-conditions>
+        <hazard-conditions>
+          <hazard hazardCode="EH.A" phenomena="Excessive Heat" significance="Watch" hazardType="long duration">
+            <hazardTextURL>https://forecast.weather.gov/wwamap/wwatxtget.php?cwa=usa&amp;wwa=Excessive%20Heat%20Watch</hazardTextURL>
+          </hazard>
+        </hazard-conditions>
+        <hazard-conditions>
+          <hazard hazardCode="EH.A" phenomena="Excessive Heat" significance="Watch" hazardType="long duration">
+            <hazardTextURL>https://forecast.weather.gov/wwamap/wwatxtget.php?cwa=usa&amp;wwa=Excessive%20Heat%20Watch</hazardTextURL>
+          </hazard>
+        </hazard-conditions>
+        <hazard-conditions>
+          <hazard hazardCode="EH.A" phenomena="Excessive Heat" significance="Watch" hazardType="long duration">
+            <hazardTextURL>https://forecast.weather.gov/wwamap/wwatxtget.php?cwa=usa&amp;wwa=Excessive%20Heat%20Watch</hazardTextURL>
+          </hazard>
+        </hazard-conditions>
       </hazards>
       <water-state time-layout="k-p3h-n9-4">
         <waves type="significant" units="feet">
