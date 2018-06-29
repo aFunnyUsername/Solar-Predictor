@@ -93,6 +93,12 @@ For now, I will just say that I am using a Support Vector Regression model to pr
 
 One thing you'll likely note if you look in the prediction_csvs folder, is that while the irradiance predictions are following the general trend of the day decently, there is often irradiance predicted at night as well as negative irradiance at some points.  This is of course incorrect and will be part of future improvements to the project.
 
+## Time Series Analysis
+
+### UPDATE AS OF 06/29/2018
+
+It's come to my attention that this problem most likely needs to be re-framed as a Time Series Forecasting problem, rather than the classic regression frame I was attempting to shove it into.  The reasons being that there is a very real time component to the data, in addition to the fact that it's multivariate (not actually an issue for ML but it will be addressed).  I thought that I could make it work in a regression framework by simulating the modulation of possible irradiance throughout the year through the ETR variable but that doesn't seem to be the case.
+
 ## Final Notes, Inspirations, etc.
 Thanks for taking the time to look at this, I'm pretty excited about the project.  
 
