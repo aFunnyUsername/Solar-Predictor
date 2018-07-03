@@ -16,7 +16,7 @@ from sklearn.svm import SVR
 from sklearn.externals import joblib
 #-------------------------------------------------------------------
 
-filename_tmy = "C:\\Users\\Jake\\Desktop\\career\\Coding\\solar_prediction\\tmy3MSPairport.csv"
+filename_tmy = "C:\\Users\\jjm64\\Desktop\\solar_predictor_work\\Solar-Predictor\\tmy3MSPairport.csv"
 
 tmy = pd.read_csv(filename_tmy, header=1, low_memory=False)
 tmy_weather = tmy[['ETR (W/m^2)', 'GHI (W/m^2)', 'DNI (W/m^2)', 'DHI (W/m^2)', 
@@ -153,10 +153,10 @@ def predictor(new_df, DNI_model_fp, DHI_model_fp):
 		return new_time
 
 	for time in new_df['Date']:
-		combined_dt = remove_year(new_df.loc[i, 'Date']) + ' ' + remove_zero_time(new_df.loc[i, 'Time'])
-		new_date_time_list.append(combined_dt)
 		new_df.loc[i, 'Date'] = remove_date_zeros(new_df.loc[i, 'Date'])
 		new_df.loc[i, 'Time'] = remove_zero_time(new_df.loc[i, 'Time'])
+		combined_dt = remove_year(new_df.loc[i, 'Date']) + ' ' + remove_zero_time(new_df.loc[i, 'Time'])
+		new_date_time_list.append(combined_dt)
 		i += 1
 	for date in tmy['Date (MM/DD/YYYY)']:
 		combined_dt = remove_year(tmy.loc[j, 'Date (MM/DD/YYYY)']) + ' ' + remove_zero_time(tmy.loc[j, 'Time (HH:MM)'])
@@ -172,7 +172,7 @@ def predictor(new_df, DNI_model_fp, DHI_model_fp):
 		if index:
 			future_ETR.append(tmy_date_time_df.loc[k, 'ETR'])
 		k += 1
-	#we will add these values to the csv data frame (and eventually a new csv)	
+	#we will add these values to the csv data frame (and eventually a new csv)
 	new_df['ETR'] = future_ETR 
 	new_X_df = new_df[['ETR', 'Cloud Coverage', 'Temperature', 'Relative Humidity']]	
 	#now for the real predictions
