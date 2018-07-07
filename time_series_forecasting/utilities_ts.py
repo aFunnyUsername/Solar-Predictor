@@ -7,6 +7,7 @@ from sklearn import preprocessing as pp
 from sklearn.metrics import mean_squared_error
 import numpy as np
 from math import sqrt
+from matplotlib import pyplot as plt
 
 
 #this function will create a datetime column out of the date and time columns
@@ -35,12 +36,9 @@ def parse_index_time_column(fp, variables):
 	tmy['DateTime'] = pd.to_datetime(tmy['DateTime'])
 	
 	tmy_reduced = pd.DataFrame()
-	tmy_reduced['DateTime'] = [(str(tmy.loc[i, 'DateTime'].month) +
-														  '/' + str(tmy.loc[i, 'DateTime'].day) +
-															' ' + str(tmy.loc[i, 'DateTime'].hour)) 
-															for i in range(len(tmy['DateTime']))]
-	tmy_reduced.set_index('DateTime')
-	
+	tmy_reduced['Month'] = [tmy.loc[i, 'DateTime'].month for i in range(len(tmy['DateTime']))]
+	tmy_reduced['Day'] = [tmy.loc[i, 'DateTime'].day for i in range(len(tmy['DateTime']))]
+	tmy_reduced['Hour'] = [tmy.loc[i, 'DateTime'].hour for i in range(len(tmy['DateTime']))]
 	for variable in variables:
 		tmy_reduced[variable] = tmy[variable].values
 	
@@ -62,8 +60,7 @@ def naive_baseline(train_dataset, test_dataset):
 	#NOTE, this might just be a walk-forward validation function later, if it's
 	#similar enough when we actually train/make predictions
 	history = [x for x in train_dataset]
-	predictions = list()
-	print(len(test_dataset))
+	predictions = list()	
 	for i in range(len(test_dataset)):
 		#prediction
 		yhat = history[-1]
@@ -79,10 +76,54 @@ def naive_baseline(train_dataset, test_dataset):
 	rmse = sqrt(mean_squared_error(test_dataset, predictions))
 	return rmse
 
+def groupby_things(df, frequency, column):
+	groups = df.groupby(frequency)[column]
+	times = pd.concat([pd.DataFrame(x[1].values) for x in groups], axis=1)
+	times = pd.DataFrame(times)
+	times.columns = range(0, times.shape[1])
+	return times
 
+def timely_line_plots(df, frequency, column):
+	plot_df = groupby_things(df, frequency, column)
+	column = column[:4]
+	plot_df.plot(subplots=True, legend=False)
+	plt.savefig("plots\\" + column + "_" + frequency + "_line.png")
+	plt.close()
 
+"""def timely_histogram_plots(df, frequency, column):
+	plot_df = groupby_things(df, frequency, column)
+	column = column[:4]
+	plot_df.hist(subplots=True, legend=False)
+	plt.savefig("plots\\" + column + "_" + frequency + "_hist.png")
+	plt.close()"""
 
+def timely_density_plots(df, frequency, column):
+	plot_df = groupby_things(df, frequency, column)
+	column = column[:4]
+	plot_df.plot(subplots=True, legend=False, kind='kde')
+	plt.savefig("plots\\" + column + "_" + frequency + "_dense.png")
+	plt.close()
 
+def timely_boxwhisker_plots(df, frequency, column):
+	plot_df = groupby_things(df, frequency, column)
+	column = column[:4]
+	plot_df.boxplot()
+	plt.savefig("plots\\" + column + "_" + frequency + "_box.png")
+	plt.close()
+
+def seasonality(df, frequency, steps, column):
+	X = df[column].values
+	diff = list()
+	for i in range(steps, len(X)):
+		value = X[i] = X[i - steps]
+		diff.append(value)
+	diff_series = pd.Series(diff)	
+	difference_df = df.loc[steps:]
+	difference_df.replace(difference_df[column], diff_series, inplace=True)
+	plot_df = groupby_things(difference_df, frequency, column)
+	plot_df.plot(subplots=True, legend=False)	
+	column = column[:4]
+	plt.savefig("plots\\" + column + "_" + frequency + "_season.png")
 
 
 

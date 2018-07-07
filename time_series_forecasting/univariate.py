@@ -16,6 +16,7 @@ values_dni = ['DNI (W/m^2)']
 values_dhi = ['DHI (W/m^2)']
 dni_df = util.parse_index_time_column('tmy3MSPairport.csv', values_dni)
 dhi_df = util.parse_index_time_column('tmy3MSPairport.csv', values_dhi)
+#print(dni_df)
 #ok, so now we have the series that we will be working with for the univariate
 #reduced problem.
 #first, we need to make a test harness.  This will involve two steps:
@@ -78,6 +79,8 @@ dhi_train, dhi_test = util.split_dataset_train_test(
 
 dni_baseline_rmse = util.naive_baseline(dni_train, dni_test)
 dhi_baseline_rmse = util.naive_baseline(dhi_train, dhi_test)
+
+
 #NOTE, this gives rmse values of 134.09 and 45.70 respectfully.
 
 #Now, we'll so some data analysis.
@@ -91,11 +94,21 @@ dhi_baseline_rmse = util.naive_baseline(dhi_train, dhi_test)
 #So, for summary stats, the mean, std don't mean much because it's an 
 #exponential distribution.  We'll have to do a transform before they do.
 
+#run the line plots function once for both dni and dhi
+util.timely_line_plots(dni_df, 'Month', 'DNI (W/m^2)')
+util.timely_line_plots(dhi_df, 'Month', 'DHI (W/m^2)')
 
+util.timely_density_plots(dni_df, 'Month', 'DNI (W/m^2)')
+util.timely_density_plots(dhi_df, 'Month', 'DHI (W/m^2)')
 
+util.timely_boxwhisker_plots(dni_df, 'Month', 'DNI (W/m^2)')
+util.timely_boxwhisker_plots(dhi_df, 'Month', 'DHI (W/m^2)')
 
-
-
+#Ok, now I'm going to look at trend/seasonality
+#I'm thinking that there is AT LEAST daily seasonality, but I'm not sure about anything further than that.  
+#Except for yearly, but with only one year of data, we can't really model that?
+util.seasonality(dni_df, 'Month', 24, 'DNI (W/m^2)')
+util.seasonality(dhi_df, 'Month', 24, 'DHI (W/m^2)')
 
 
 
