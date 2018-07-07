@@ -19,12 +19,12 @@ lon = '-93.233'
 unit = 'e'
 points = 'sky=sky'
 to_predict = ['DNI', 'DHI']
-file_path_new = "C:\\Users\\jjm64\\Desktop\\solar_predictor_work\\Solar-Predictor\\data_nws.xml"
-file_path_old = "C:\\Users\\jjm64\\Desktop\\solar_predictor_work\\Solar-Predictor\\data_nws_old.xml"
-tmy_file_path = "C:\\Users\\jjm64\\Desktop\\solar_predictor_work\\Solar-Predictor\\tmy3MSPairport.csv" 
-DNI_model_fp = "C:\\Users\\jjm64\\Desktop\\solar_predictor_work\\Solar-Predictor\\models\\SVR_DNI_final_06272018.sav"
-DHI_model_fp = "C:\\Users\\jjm64\\Desktop\\solar_predictor_work\\Solar-Predictor\\models\\SVR_DHI_final_06272018.sav"
-write_df_fp = "C:\\Users\\jjm64\\Desktop\\solar_predictor_work\\Solar-Predictor\\prediction_csvs\\SVR_predictions.csv"
+file_path_new = "C:\\Users\\jjm64\\solar_predictor_work\\Solar-Predictor\\data_nws.xml"
+file_path_old = "C:\\Users\\jjm64\\solar_predictor_work\\Solar-Predictor\\data_nws_old.xml"
+tmy_file_path = "C:\\Users\\jjm64\\solar_predictor_work\\Solar-Predictor\\tmy3MSPairport.csv" 
+DNI_model_fp = "C:\\Users\\jjm64\\solar_predictor_work\\Solar-Predictor\\models\\SVR_DNI_final_06272018.sav"
+DHI_model_fp = "C:\\Users\\jjm64\\solar_predictor_work\\Solar-Predictor\\models\\SVR_DHI_final_06272018.sav"
+write_df_fp = "C:\\Users\\jjm64\\solar_predictor_work\\Solar-Predictor\\prediction_csvs\\SVR_predictions.csv"
 #NOTE, for now, just make sure than write_df_fp matches the model that we're using but we'll do it smarter some other time
 
 
