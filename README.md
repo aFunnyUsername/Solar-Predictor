@@ -78,6 +78,10 @@ Note, NDFD gives in Fahrenheit which I am converting to Celsius at the moment si
 ### Extra Terrestrial Irradiance (ETR)
 This value is essentially used as a "Time" scaler for the data.  For each hour of the year, there is some possible ETR that is unaffected by cloud cover since it is measured at a point above the atmosphere.  I match the timestamp from NDFD with the timestamp from TMY3 (note, just month, day and hour are relevant in this case) and simply use the ETR value for that hour in predicting the solar irradiance for a given time.
 
+### UPDATE AS OF 07/23/2018
+
+So, this is no longer being used as a scaler, rather, it is simply a check for night time. For example, the model will make a prediction, add the trend an seasonality curves back in, then check the value of ETR for that prediction time step. If ETR is 0, the prediction is 0, since this is an indication that there would be no irradiance regardless of weather effects (i.e. night time.)
+
 ### Other Attributes to Consider Later
 Ceiling Height would be interesting to consider at some point, however, NDFD doesn't have a value for this directly, so it would need to be thought through more.
 
@@ -86,18 +90,22 @@ The average solar intensity for the hour measured (TMY3) from a collimated beam 
 
 ### Diffuse Horizontal Irradiance (DHI)
 The average solar intensity for the hour measured (TMY3) recieved from the sky on a horizontal surface.  This is an interesting value and not insignificant in calculating the total global irradiance at some time- some of the DNI that gets diffused by cloud cover can be useful to the solar system.  
+## Temporal Structures
+There are some underlying temporal structures that need to be removed in order to model the data with some combination of autoregression, integrated differencing and moving average window. 
 
-## Machine Learning
+### Seasonality
+Both DHI and DNI display 24 hour seasonality, meaning that they go through a cycle every hour. This cycle is independent of weather data and therefore obscures the true signal of the data and should thus be removed. I have done this by fitting a 4th degree polynomial function to the data and removing that curve. The curve is added back in after making a prediction.
 
-For now, I will just say that I am using a Support Vector Regression model to predict the DNI and DHI for any given hour of NDFD.  The model was trained using 10 fold cross validation and was found to be "good" as far as statistics go.  I will publish my findings for this model and other models later as I learn more about how they work, and begin to remember more of my error analysis from all my college physics labs ;).  
+### Trend
+There is also a clear trend to the data, or rather 2 trends. One is an upward trend from the first step in the year (January 1, 00:00) up until the brightest day of the year, and then a downward trend for the second half of the data. This structure must also be removed and added back in after making a prediction. For this structure, I simply split the data into the 'upward' portion and 'downward' portion. I then fit a linear trend to each and subtracted and added the sets back together. Note, a parabolic or even sinusoidal fit would likely work better for this, and I plan to test that later.
 
-One thing you'll likely note if you look in the prediction_csvs folder, is that while the irradiance predictions are following the general trend of the day decently, there is often irradiance predicted at night as well as negative irradiance at some points.  This is of course incorrect and will be part of future improvements to the project.
+## Machine Learning / Time Series Analysis
 
-## Time Series Analysis
+### UPDATE AS OF 07/23/2018
 
-### UPDATE AS OF 06/29/2018
+After exploring time series analysis/forecasting, it's clear that the temporal component, more specifically the order of the observations, is a powerful tool in predicting the solar irradiance. I will be adding the results of my explorations within the next week, once I get the predictive tool back to being able to make predicitons.
 
-It's come to my attention that this problem most likely needs to be re-framed as a Time Series Forecasting problem, rather than the classic regression frame I was attempting to shove it into.  The reasons being that there is a very real time component to the data, in addition to the fact that it's multivariate (not actually an issue for ML but it will be addressed).  I thought that I could make it work in a regression framework by simulating the modulation of possible irradiance throughout the year through the ETR variable but that doesn't seem to be the case.
+In short, earlier, I was attempting to model the data by training the model on a randomized set of the TMY3 sample data. However, this removed a crucial element from the data, namely, the temporal structure. I attempted to add this back in as Extraterrestrial Irradiance, but it would seem that the problem is not simply knowing some "temporal multiplier" for each prediction, but rather the prediction needs to know a certain number of values for past time steps in order to be accurate. One key error before, was that the model would predict seeing irradiance at night time which is clearly incorrect.  While adding Extraterrestrial Irradiance in as a variable was a good start, over the course of training the model, cloud coverage was likely seen as the highest correlated variable with irradiance.  Because of this, even if ETR was 0, a low cloud cover would likely indicate to the model that it should predict a high irradiance value. Thus, we have sunlight at night. This should be fixed in the next iteration of the project.
 
 ## Final Notes, Inspirations, etc.
 Thanks for taking the time to look at this, I'm pretty excited about the project.  
